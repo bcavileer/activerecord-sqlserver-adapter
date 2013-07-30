@@ -33,7 +33,7 @@ module ActiveRecord
       when :dblib
         require 'tiny_tds'
       when :odbc
-        raise ArgumentError, 'Missing :dsn configuration.' unless config.has_key?(:dsn)
+        raise ArgumentError, 'Missing :conn_str configuration.' unless config.has_key?(:conn_str)
         require 'odbc'
         require 'active_record/connection_adapters/sqlserver/core_ext/odbc'
       else
